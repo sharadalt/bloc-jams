@@ -30,6 +30,22 @@
      ]
  };
 
+// One more Example Album
+ var albumSharada = {
+     title: 'The Mountains',
+     artist: 'Sharada Thimmaiah',
+     label: 'EM',
+     year: '2016',
+     albumArtUrl: 'assets/images/album_covers/21.png',
+     songs: [
+         { title: 'Hello, Operator?', duration: '1:01' },
+         { title: 'Ring, ring, ring', duration: '5:01' },
+         { title: 'Fits in your pocket', duration: '3:21'},
+         { title: 'Can you hear me now?', duration: '3:14' },
+         { title: 'Wrong phone number', duration: '2:15'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -66,5 +82,5 @@ var setCurrentAlbum = function(album) {
  };
  
  window.onload = function() {
-     setCurrentAlbum(albumPicasso);
+     setCurrentAlbum(albumSharada);
  };
