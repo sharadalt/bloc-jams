@@ -145,7 +145,7 @@ var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause">
  var currentlyPlayingSong = null;
  
  window.onload = function() {
-   setCurrentAlbum(albumSharada);
+   setCurrentAlbum(albumPicasso);
    
    songListContainer.addEventListener('mouseover', function(event){
      
