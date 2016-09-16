@@ -139,6 +139,19 @@ var setCurrentAlbum = function(album) {
      }
  };
 
+var setCurrentTimeInPlayerBar = function(currentTime){
+	$(".current-time").text(currentTime);
+}
+
+var setTotalTimeInPlayerBar = function(totalTime) {
+  $(".total-time").text(totalTime);
+}
+
+var filterTimeCode = function(timeInSeconds){
+
+       Math.floor(parseFloat(timeInSeconds));
+}
+
  var updateSeekBarWhileSongPlays = function() {
      if (currentSoundFile) {
          // #10
@@ -149,6 +162,7 @@ var setCurrentAlbum = function(album) {
  
              updateSeekPercentage($seekBar, seekBarFillRatio);
          });
+         setCurrentTimeInPlayerBar(filterTimeCode(this.getTime));
      }
  };
 var updateSeekPercentage = function($seekBar, seekBarFillRatio) {
@@ -219,6 +233,7 @@ var updatePlayerBarSong = function() {
     $('.currently-playing .artist-name').text(currentAlbum.artist);
     $('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.title + " - " + currentAlbum.artist);
     $('.main-controls .play-pause').html(playerBarPauseButton);
+    setTotalTimeInPlayerBar(filterTimeCode(this.getDuration));
 
 };
 
